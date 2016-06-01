@@ -44,7 +44,7 @@ birthDate date,
 description varchar(20)
 );
 
-alter table MuTrack(
+create table MuTrack(
 idTrack int primary key AUTO_INCREMENT,
 trackNumber int,
 nameT varchar(20),

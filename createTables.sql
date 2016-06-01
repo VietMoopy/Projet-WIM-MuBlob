@@ -17,17 +17,19 @@ message varchar(200),
 dateReview date,
 visibility boolean,
 email varchar(30),
-foreign key (email) references RUser(email),
-idAlbum int,
-foreign key (idAlbum) references Album(idAlbum)
+idAlbum int
 );
+
+alter table MuReview add foreign key (email) references MuUser(email);
+alter table MuReview add foreign key (idAlbum) references MuAlbum(idAlbum);
 
 create table MuRating(
 idRating int primary key AUTO_INCREMENT,
 value int, /*between 1 and 10*/
 dateRating date,
 email varchar(30),
-foreign key (email) references RUser(email),
-idAlbum int,
-foreign key (idAlbum) references Album(idAlbum)
+idAlbum int
 );
+
+alter table MuRating add foreign key (email) references MuUser(email);
+alter table MuRating add foreign key (idAlbum) references MuAlbum(idAlbum);

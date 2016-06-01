@@ -20,9 +20,6 @@ email varchar(30),
 idAlbum int
 );
 
-alter table MuReview add foreign key (email) references MuUser(email);
-/*alter table MuReview add foreign key (idAlbum) references MuAlbum(idAlbum);*/
-
 create table MuRating(
 idRating int primary key AUTO_INCREMENT,
 value int, /*between 1 and 10*/
@@ -31,5 +28,24 @@ email varchar(30),
 idAlbum int
 );
 
+create table MuAlbum(
+idAlbum int primary key AUTO_INCREMENT,
+nameA varchar(20),
+releaseDate date,
+genre varchar(30) /*between ... */
+globalRating float,
+idArtist int
+);
+
+create table MuArtist(
+idArtist int primary key AUTO_INCREMENT,
+nameA varchar(20),
+birthDate date,
+description varchar(20)
+);
+
 alter table MuRating add foreign key (email) references MuUser(email);
-/*alter table MuRating add foreign key (idAlbum) references MuAlbum(idAlbum);*/
+alter table MuRating add foreign key (idAlbum) references MuAlbum(idAlbum);
+alter table MuReview add foreign key (email) references MuUser(email);
+alter table MuReview add foreign key (idAlbum) references MuAlbum(idAlbum);
+alter table MuAlbum add foreign key (idArtist) references MuArtist(idArtist);

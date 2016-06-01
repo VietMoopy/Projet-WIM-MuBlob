@@ -21,7 +21,7 @@ idAlbum int
 );
 
 alter table MuReview add foreign key (email) references MuUser(email);
-alter table MuReview add foreign key (idAlbum) references MuAlbum(idAlbum);
+/*alter table MuReview add foreign key (idAlbum) references MuAlbum(idAlbum);*/
 
 create table MuRating(
 idRating int primary key AUTO_INCREMENT,
@@ -32,4 +32,4 @@ idAlbum int
 );
 
 alter table MuRating add foreign key (email) references MuUser(email);
-alter table MuRating add foreign key (idAlbum) references MuAlbum(idAlbum);
+/*alter table MuRating add foreign key (idAlbum) references MuAlbum(idAlbum);*/

@@ -44,8 +44,16 @@ birthDate date,
 description varchar(20)
 );
 
+alter table MuTrack(
+idTrack int primary key AUTO_INCREMENT,
+trackNumber int,
+nameT varchar(20),
+idAlbum int
+);
+
 alter table MuRating add foreign key (email) references MuUser(email);
 alter table MuRating add foreign key (idAlbum) references MuAlbum(idAlbum);
 alter table MuReview add foreign key (email) references MuUser(email);
 alter table MuReview add foreign key (idAlbum) references MuAlbum(idAlbum);
 alter table MuAlbum add foreign key (idArtist) references MuArtist(idArtist);
+alter table MuTrack add foreign key (idAlbum) references MuAlbum(idAlbum);

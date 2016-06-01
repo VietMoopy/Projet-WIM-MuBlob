@@ -32,7 +32,7 @@ create table MuAlbum(
 idAlbum int primary key AUTO_INCREMENT,
 nameA varchar(20),
 releaseDate date,
-genre varchar(30) /*between ... */
+genre varchar(30), /*between ... */
 globalRating float,
 idArtist int
 );
